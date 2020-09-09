@@ -1,11 +1,12 @@
 var body = document.body;
-var vHDiv = document.createElement("h4");
+var vHDiv = document.createElement("div");
 var mPageh1 = document.createElement("h1");
 var mPageP = document.createElement("p");
 var hScoresPage = document.createElement("div");
 var hSh1 = document.createElement("h1");
 var hSmain = document.createElement("main");
-// var hSoL = document.createElement("ol");
+var hSmainContent = document.createElement("ol");
+
 var gBackBut = document.createElement("button");
 var clrBut = document.createElement("button");
 
@@ -59,7 +60,7 @@ var aDp = document.createElement("p");
 var aDtxtI = document.createElement("textarea");
 var aDsubBut = document.createElement("button");
 
-
+var finishTime;
 
 
 
@@ -72,7 +73,7 @@ mPageh1.textContent = "Coding Challenge Quiz";
 mPageP.textContent = "To answer the following questions within the time limit. Keep in mind that incorrect answers will penalize your scoretime by ten seconds!";
 vHDiv.textContent = "View Highscores";
 hSh1.textContent = "Highscores";
-// hSoL.textContent = "blah";
+
 hSmain.textContent = "TS-44";
 gBackBut.textContent = "Go Back";
 clrBut.textContent = "Clear Highscores";
@@ -112,7 +113,8 @@ q5cBut.textContent = "for loops";
 q5dBut.textContent = "console.log";
 
 aDh1.textContent = "All Done!";
-aDp.textContent = "Your final score is " + secondsLeft;
+aDp.textContent = "Your final score is " + finishTime;
+aDsubBut.textContent = "Submit";
 
 
 hSh1.setAttribute("style", "margin-top: 20px");
@@ -126,7 +128,7 @@ hScoresPage.setAttribute("style", "text-align: center");
 // hSmain.setAttribute("style", "background: blue");
 // hSmain.setAttribute("style", "margin: 5px");
 hSmain.setAttribute("style", "color: purple");
-timeDiv.setAttribute("style", "float: right");
+tDiv.setAttribute("style", "float: right");
 
 gBackBut.setAttribute("style", "margin: 5px");
 clrBut.setAttribute("style", "margin: 5px");
@@ -191,7 +193,7 @@ clrBut.addEventListener("click", function () {
 
 
 
-sqButton.addEventListener("click", function () {
+sqButton.addEventListener("click", function (a) {
 
     var secondsLeft = 75;
 
@@ -202,7 +204,7 @@ sqButton.addEventListener("click", function () {
           if(secondsLeft === 0) {
             clearInterval(timerInterval);
             secondsLeft = 0;
-          }
+          } 
       
         }, 1000);
         
@@ -210,8 +212,8 @@ sqButton.addEventListener("click", function () {
       
       setTime();
       body.removeChild(mPageDiv);
-      body.appendChild(qOneDiv);
       body.appendChild(vHDiv);
+      body.appendChild(qOneDiv);
       qOneDiv.appendChild(qOneh1);
       qOneDiv.appendChild(q1aBut);
       qOneDiv.appendChild(q1bBut);
@@ -223,22 +225,23 @@ sqButton.addEventListener("click", function () {
 
 q1aBut.addEventListener("click", function () {
     body.removeChild(qOneDiv);
-    body.appendChild(qTwoDiv);
     body.appendChild(vHDiv);
+    body.appendChild(qTwoDiv);
     qTwoDiv.appendChild(qTwoh1);
     qTwoDiv.appendChild(q2aBut);
     qTwoDiv.appendChild(q2bBut);
     qTwoDiv.appendChild(q2cBut);
     qTwoDiv.appendChild(q2dBut);
     qTwoDiv.appendChild(wRdiv);
+    
 
 }); 
 
 
 q1bBut.addEventListener("click", function () {
     body.removeChild(qOneDiv);
-    body.appendChild(qTwoDiv);
     body.appendChild(vHDiv);
+    body.appendChild(qTwoDiv);
     qTwoDiv.appendChild(qTwoh1);
     qTwoDiv.appendChild(q2aBut);
     qTwoDiv.appendChild(q2bBut);
@@ -250,8 +253,8 @@ q1bBut.addEventListener("click", function () {
 
 q1cBut.addEventListener("click", function () {
     body.removeChild(qOneDiv);
-    body.appendChild(qTwoDiv);
     body.appendChild(vHDiv);
+    body.appendChild(qTwoDiv);
     qTwoDiv.appendChild(qTwoh1);
     qTwoDiv.appendChild(q2aBut);
     qTwoDiv.appendChild(q2bBut);
@@ -263,8 +266,8 @@ q1cBut.addEventListener("click", function () {
 
 q1dBut.addEventListener("click", function () {
     body.removeChild(qOneDiv);
-    body.appendChild(qTwoDiv);
     body.appendChild(vHDiv);
+    body.appendChild(qTwoDiv);
     qTwoDiv.appendChild(qTwoh1);
     qTwoDiv.appendChild(q2aBut);
     qTwoDiv.appendChild(q2bBut);
@@ -278,8 +281,8 @@ q1dBut.addEventListener("click", function () {
 
 q2aBut.addEventListener("click", function () {
     body.removeChild(qTwoDiv);
-    body.appendChild(qThreeDiv);
     body.appendChild(vHDiv);
+    body.appendChild(qThreeDiv);
     qThreeDiv.appendChild(qThreeh1);
     qThreeDiv.appendChild(q3aBut);
     qThreeDiv.appendChild(q3bBut);
@@ -292,8 +295,8 @@ q2aBut.addEventListener("click", function () {
 
 q2bBut.addEventListener("click", function () {
     body.removeChild(qTwoDiv);
-    body.appendChild(qThreeDiv);
     body.appendChild(vHDiv);
+    body.appendChild(qThreeDiv);
     qThreeDiv.appendChild(qThreeh1);
     qThreeDiv.appendChild(q3aBut);
     qThreeDiv.appendChild(q3bBut);
@@ -305,8 +308,8 @@ q2bBut.addEventListener("click", function () {
 
 q2cBut.addEventListener("click", function () {
     body.removeChild(qTwoDiv);
-    body.appendChild(qThreeDiv);
     body.appendChild(vHDiv);
+    body.appendChild(qThreeDiv);
     qThreeDiv.appendChild(qThreeh1);
     qThreeDiv.appendChild(q3aBut);
     qThreeDiv.appendChild(q3bBut);
@@ -318,8 +321,8 @@ q2cBut.addEventListener("click", function () {
 
 q2dBut.addEventListener("click", function () {
     body.removeChild(qTwoDiv);
-    body.appendChild(qThreeDiv);
     body.appendChild(vHDiv);
+    body.appendChild(qThreeDiv);
     qThreeDiv.appendChild(qThreeh1);
     qThreeDiv.appendChild(q3aBut);
     qThreeDiv.appendChild(q3bBut);
@@ -334,8 +337,8 @@ q2dBut.addEventListener("click", function () {
 
 q3aBut.addEventListener("click", function () {
     body.removeChild(qThreeDiv);
-    body.appendChild(qFourDiv);
     body.appendChild(vHDiv);
+    body.appendChild(qFourDiv);
     qFourDiv.appendChild(qFourh1);
     qFourDiv.appendChild(q4aBut);
     qFourDiv.appendChild(q4bBut);
@@ -346,8 +349,8 @@ q3aBut.addEventListener("click", function () {
 
 q3bBut.addEventListener("click", function () {
     body.removeChild(qThreeDiv);
-    body.appendChild(qFourDiv);
     body.appendChild(vHDiv);
+    body.appendChild(qFourDiv);
     qFourDiv.appendChild(qFourh1);
     qFourDiv.appendChild(q4aBut);
     qFourDiv.appendChild(q4bBut);
@@ -358,8 +361,8 @@ q3bBut.addEventListener("click", function () {
 
 q3cBut.addEventListener("click", function () {
     body.removeChild(qThreeDiv);
-    body.appendChild(qFourDiv);
     body.appendChild(vHDiv);
+    body.appendChild(qFourDiv);
     qFourDiv.appendChild(qFourh1);
     qFourDiv.appendChild(q4aBut);
     qFourDiv.appendChild(q4bBut);
@@ -370,8 +373,8 @@ q3cBut.addEventListener("click", function () {
 
 q3dBut.addEventListener("click", function () {
     body.removeChild(qThreeDiv);
-    body.appendChild(qFourDiv);
     body.appendChild(vHDiv);
+    body.appendChild(qFourDiv);
     qFourDiv.appendChild(qFourh1);
     qFourDiv.appendChild(q4aBut);
     qFourDiv.appendChild(q4bBut);
@@ -385,8 +388,8 @@ q3dBut.addEventListener("click", function () {
 
 q4aBut.addEventListener("click", function () {
     body.removeChild(qFourDiv);
-    body.appendChild(qFiveDiv);
     body.appendChild(vHDiv);
+    body.appendChild(qFiveDiv);
     qFiveDiv.appendChild(qFiveh1);
     qFiveDiv.appendChild(q5aBut);
     qFiveDiv.appendChild(q5bBut);
@@ -397,8 +400,8 @@ q4aBut.addEventListener("click", function () {
 
 q4bBut.addEventListener("click", function () {
     body.removeChild(qFourDiv);
-    body.appendChild(qFiveDiv);
     body.appendChild(vHDiv);
+    body.appendChild(qFiveDiv);
     qFiveDiv.appendChild(qFiveh1);
     qFiveDiv.appendChild(q5aBut);
     qFiveDiv.appendChild(q5bBut);
@@ -409,8 +412,8 @@ q4bBut.addEventListener("click", function () {
 
 q4cBut.addEventListener("click", function () {
     body.removeChild(qFourDiv);
-    body.appendChild(qFiveDiv);
     body.appendChild(vHDiv);
+    body.appendChild(qFiveDiv);
     qFiveDiv.appendChild(qFiveh1);
     qFiveDiv.appendChild(q5aBut);
     qFiveDiv.appendChild(q5bBut);
@@ -421,8 +424,8 @@ q4cBut.addEventListener("click", function () {
 
 q4dBut.addEventListener("click", function () {
     body.removeChild(qFourDiv);
-    body.appendChild(qFiveDiv);
     body.appendChild(vHDiv);
+    body.appendChild(qFiveDiv);
     qFiveDiv.appendChild(qFiveh1);
     qFiveDiv.appendChild(q5aBut);
     qFiveDiv.appendChild(q5bBut);
@@ -436,8 +439,8 @@ q4dBut.addEventListener("click", function () {
 
 q5aBut.addEventListener("click", function () {
     body.removeChild(qFiveDiv);
-    body.appendChild(aDdiv);
     body.appendChild(vHDiv);
+    body.appendChild(aDdiv);
     aDdiv.appendChild(aDh1);
     aDdiv.appendChild(aDp);
     aDdiv.appendChild(aDtxtI);
@@ -446,8 +449,8 @@ q5aBut.addEventListener("click", function () {
 
 q5bBut.addEventListener("click", function () {
     body.removeChild(qFiveDiv);
-    body.appendChild(aDdiv);
     body.appendChild(vHDiv);
+    body.appendChild(aDdiv);
     aDdiv.appendChild(aDh1);
     aDdiv.appendChild(aDp);
     aDdiv.appendChild(aDtxtI);
@@ -455,8 +458,8 @@ q5bBut.addEventListener("click", function () {
 });
 q5cBut.addEventListener("click", function () {
     body.removeChild(qFiveDiv);
-    body.appendChild(aDdiv);
     body.appendChild(vHDiv);
+    body.appendChild(aDdiv);
     aDdiv.appendChild(aDh1);
     aDdiv.appendChild(aDp);
     aDdiv.appendChild(aDtxtI);
@@ -464,13 +467,23 @@ q5cBut.addEventListener("click", function () {
 });
 q5dBut.addEventListener("click", function () {
     body.removeChild(qFiveDiv);
-    body.appendChild(aDdiv);
     body.appendChild(vHDiv);
+    body.appendChild(aDdiv);
     aDdiv.appendChild(aDh1);
     aDdiv.appendChild(aDp);
     aDdiv.appendChild(aDtxtI);
     aDdiv.appendChild(aDsubBut);
-});
+    });
+
+ aDsubBut.addEventListener("click", function () {
+     body.removeChild(aDdiv);
+     body.appendChild(hScoresPage);
+     hScoresPage.appendChild(hSh1);
+     hScoresPage.appendChild(hSmain);
+     hScoresPage.appendChild(gBackBut);
+     hScoresPage.appendChild(clrBut);
+ });   
+
 
 body.appendChild(mPageDiv);
 mPageDiv.append(vHDiv);
@@ -480,10 +493,4 @@ mPageDiv.append(sqButton);
 
 
 
-
-
-
-
-
-
-
+ 
